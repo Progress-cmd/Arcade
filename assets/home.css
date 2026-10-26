@@ -1,0 +1,199 @@
+/* ==========================================================================
+   La Salle de Jeux — page d'accueil
+   ========================================================================== */
+
+:root {
+  --bg-1: #2a2238;
+  --bg-2: #14111c;
+  --gold: #e6c475;
+  --gold-2: #b48a35;
+  --ink: #1c1b22;
+  --red: #c1272d;
+  --paper: #fbf7ec;
+  --paper-2: #efe7d3;
+  --muted: #b9b2c6;
+
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-title: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; min-height: 100vh;
+  font-family: var(--font-ui); line-height: 1.5;
+  color: #fff;
+  background-color: var(--bg-2);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 90% 60% at 50% 0%, var(--bg-1) 0%, var(--bg-2) 70%);
+  background-attachment: fixed;
+  display: flex; flex-direction: column;
+}
+
+/* ---------- En-tête ---------- */
+
+.hero {
+  text-align: center;
+  padding: clamp(56px, 10vw, 104px) 16px 24px;
+  max-width: 720px; margin: 0 auto;
+}
+.eyebrow {
+  margin: 0 0 .8em; color: var(--gold);
+  font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+}
+.title {
+  margin: 0; font: 800 clamp(2.6rem, 9vw, 4.6rem)/1.02 var(--font-title);
+  background: linear-gradient(180deg, #fff4d6 10%, var(--gold) 60%, #c99a3f);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-wrap: balance;
+}
+.title em { font-style: italic; font-weight: 700; }
+.lead { margin: 1.2em auto 0; max-width: 34em; color: var(--muted); font-size: 1.05rem; text-wrap: pretty; }
+
+/* Dés décoratifs */
+.dice { display: flex; justify-content: center; gap: 14px; margin-bottom: 26px; }
+.die {
+  position: relative; width: 48px; height: 48px; border-radius: 11px;
+  background: linear-gradient(145deg, #fff, var(--paper-2));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .45), inset 0 -3px 0 rgba(0, 0, 0, .08);
+}
+.die i { position: absolute; width: 9px; height: 9px; margin: -4.5px; border-radius: 50%; background: var(--ink); }
+.d1 { transform: rotate(-14deg); }
+.d1 i:nth-child(1) { left: 26%; top: 26%; }
+.d1 i:nth-child(2) { left: 50%; top: 50%; background: var(--red); }
+.d1 i:nth-child(3) { left: 74%; top: 74%; }
+.d2 { transform: rotate(10deg) translateY(6px); }
+.d2 i:nth-child(1) { left: 26%; top: 26%; }
+.d2 i:nth-child(2) { left: 74%; top: 26%; }
+.d2 i:nth-child(3) { left: 50%; top: 50%; }
+.d2 i:nth-child(4) { left: 26%; top: 74%; }
+.d2 i:nth-child(5) { left: 74%; top: 74%; }
+
+/* ---------- Contenu ---------- */
+
+.wrap { width: min(1080px, 100%); margin: 0 auto; padding: 24px 16px 48px; flex: 1; }
+
+.section-title {
+  display: flex; align-items: center; gap: 16px; margin: 32px 0 22px;
+  font: 700 1.5rem/1.2 var(--font-title); color: var(--paper);
+}
+.section-title::before, .section-title::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230, 196, 117, .45), transparent);
+}
+
+.games {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}
+
+/* Fiche d'un jeu */
+.game {
+  display: flex; flex-direction: column; height: 100%;
+  border-radius: 20px; overflow: hidden; text-decoration: none;
+  background: var(--paper); color: var(--ink);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45), 0 0 0 1px rgba(255, 255, 255, .4) inset;
+  transition: transform .2s, box-shadow .2s;
+}
+.game:hover, .game:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .55), 0 0 0 2px var(--gold);
+  outline: none;
+}
+
+.cover {
+  position: relative; height: 170px; overflow: hidden;
+  display: grid; place-items: center;
+  background: radial-gradient(ellipse at 50% 45%, var(--c1), var(--c2));
+}
+.cover::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  box-shadow: inset 0 -30px 40px -30px rgba(0, 0, 0, .5);
+}
+.cover .letter { font: 800 5rem/1 var(--font-title); color: rgba(255, 255, 255, .9); }
+
+/* Éventail de cartes à jouer (vignette de la Crapette) */
+.pc {
+  position: absolute; left: 50%; top: 38px; width: 70px; height: 98px; margin-left: -35px;
+  border-radius: 8px; padding: 8px; text-align: left;
+  background: linear-gradient(#fff, var(--paper-2)); color: var(--ink);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+  font: 700 22px/1 var(--font-title);
+  transform-origin: 50% 130%;
+  transition: transform .3s cubic-bezier(.3, 1.4, .5, 1);
+}
+.pc i { display: block; font-style: normal; font-size: 18px; }
+.pc.red { color: var(--red); }
+.pc:nth-child(1) { transform: rotate(-16deg) translateX(-14px); }
+.pc:nth-child(2) { transform: translateY(-6px); z-index: 1; }
+.pc:nth-child(3) { transform: rotate(16deg) translateX(14px); z-index: 2; }
+.game:hover .pc:nth-child(1) { transform: rotate(-26deg) translateX(-22px); }
+.game:hover .pc:nth-child(2) { transform: translateY(-12px); }
+.game:hover .pc:nth-child(3) { transform: rotate(26deg) translateX(22px); }
+
+.body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
+.kind {
+  align-self: flex-start; padding: .25em .75em; border-radius: 999px;
+  background: rgba(180, 138, 53, .15); color: #7d5c1c;
+  font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.body h3 { margin: .45em 0 .25em; font: 800 1.7rem/1.1 var(--font-title); }
+.body p { margin: 0 0 14px; color: #5b5848; font-size: .95rem; }
+
+.meta { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; color: #6d6853; font-size: .85rem; font-weight: 600; }
+.meta li { display: flex; align-items: center; gap: 6px; }
+.meta svg, .play svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.play {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: .5em;
+  padding: .7em 1.4em; border-radius: 999px; font-weight: 700;
+  color: #2a1d05;
+  background: linear-gradient(180deg, #f6dc98, var(--gold) 45%, #c99a3f);
+  box-shadow: 0 2px 0 #8a6623, 0 6px 16px rgba(0, 0, 0, .2), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+.play svg { transition: transform .2s; }
+.game:hover .play svg { transform: translateX(3px); }
+
+/* Emplacement « bientôt » */
+.soon-inner {
+  height: 100%; min-height: 280px; border-radius: 20px;
+  border: 2px dashed rgba(230, 196, 117, .3);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  padding: 24px; text-align: center; color: var(--muted);
+}
+.soon-inner strong { color: var(--paper); font: 700 1.2rem/1.2 var(--font-title); }
+.soon-inner span:last-child { font-size: .9rem; max-width: 22em; }
+.soon-icon {
+  width: 52px; height: 52px; margin-bottom: 8px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 2px solid rgba(230, 196, 117, .4); color: var(--gold); font-size: 1.8rem; line-height: 1;
+}
+
+/* Comment ça marche */
+.how { margin-top: 56px; }
+.steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+}
+.steps li {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: start;
+  padding: 18px; border-radius: 16px;
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .08);
+}
+.steps b {
+  grid-row: span 2; width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--gold); color: #2a1d05; font: 800 1.1rem/1 var(--font-title);
+}
+.steps strong { color: var(--paper); }
+.steps span { color: var(--muted); font-size: .92rem; }
+
+.foot { text-align: center; padding: 24px 16px 32px; color: rgba(185, 178, 198, .6); font-size: .85rem; }
+.foot p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
