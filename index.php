@@ -33,6 +33,16 @@ $games = [
         'theme'   => ['#3d3488', '#120d31'],
         'cover'   => '<span class="p10" style="--cc:#d8343f">7</span><span class="p10" style="--cc:#2e5cc7">8</span><span class="p10" style="--cc:#23965a">9</span><span class="p10" style="--cc:#eaa912">10</span>',
     ],
+    [
+        'dir'     => 'SkipBo',
+        'name'    => 'Skip-Bo',
+        'pitch'   => 'Montez les piles de 1 à 12 et videz votre pile de départ avant tout le monde. Les cartes Skip-Bo remplacent tout !',
+        'players' => '2 à 6 joueurs',
+        'time'    => '20–45 min',
+        'kind'    => 'Cartes',
+        'theme'   => ['#a3304a', '#2a0910'],
+        'cover'   => '<span class="sb" style="--cc:#2a5bc4">1</span><span class="sb" style="--cc:#1f8f50">5</span><span class="sb" style="--cc:#d23440">9</span><span class="sb wild">SB</span>',
+    ],
 ];
 
 // Le jeu n'apparaît que si son dossier existe.

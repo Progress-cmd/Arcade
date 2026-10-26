@@ -151,6 +151,28 @@ body {
 .game:hover .p10:nth-child(3) { transform: rotate(11deg); }
 .game:hover .p10:nth-child(4) { transform: rotate(32deg); }
 
+/* Éventail de cartes blanches à chiffres de couleur (vignette de Skip-Bo) */
+.sb {
+  position: absolute; left: 50%; top: 40px; width: 64px; height: 92px; margin-left: -32px;
+  border-radius: 9px; border: 3px solid #fff; background: #fffdf7; color: var(--cc);
+  display: grid; place-items: start; padding: 5px 7px;
+  font: 900 26px/1 var(--font-ui);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .4), inset 0 0 0 2px var(--cc);
+  transform-origin: 50% 130%; transition: transform .3s;
+}
+.sb.wild {
+  place-items: center; color: #fff; font-size: 24px; text-shadow: 0 2px 0 rgba(0, 0, 0, .25);
+  background: linear-gradient(160deg, #f7a234, #d8452a); box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+}
+.sb:nth-child(1) { transform: rotate(-24deg); }
+.sb:nth-child(2) { transform: rotate(-8deg); }
+.sb:nth-child(3) { transform: rotate(8deg); }
+.sb:nth-child(4) { transform: rotate(24deg); }
+.game:hover .sb:nth-child(1) { transform: rotate(-32deg); }
+.game:hover .sb:nth-child(2) { transform: rotate(-11deg); }
+.game:hover .sb:nth-child(3) { transform: rotate(11deg); }
+.game:hover .sb:nth-child(4) { transform: rotate(32deg); }
+
 .body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
 .kind {
   align-self: flex-start; padding: .25em .75em; border-radius: 999px;
