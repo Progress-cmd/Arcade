@@ -1,5 +1,12 @@
 <?php
 declare(strict_types=1);
+// Sans « / » final (…/Phase10), les chemins relatifs (assets/, api.php) pointeraient vers le dossier parent
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+if (!str_ends_with($path, '/') && !str_ends_with($path, '.php')) {
+    $query = $_SERVER['QUERY_STRING'] ?? '';
+    header('Location: ' . $path . '/' . ($query !== '' ? "?$query" : ''), true, 301);
+    exit;
+}
 $gameId = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', (string)($_GET['g'] ?? '')));
 $asset = fn(string $f) => "assets/$f?v=" . filemtime(__DIR__ . "/assets/$f");
 ?><!doctype html>

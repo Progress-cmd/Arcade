@@ -23,6 +23,16 @@ $games = [
         'theme'   => ['#1f7d4e', '#072a1b'],
         'cover'   => '<span class="pc red">A<i>♥</i></span><span class="pc">R<i>♠</i></span><span class="pc red">D<i>♦</i></span>',
     ],
+    [
+        'dir'     => 'Phase10',
+        'name'    => 'Phase 10',
+        'pitch'   => 'Groupes, suites et couleurs : réussissez les dix phases avant les autres. Gare aux cartes Passe !',
+        'players' => '2 à 6 joueurs',
+        'time'    => '45–90 min',
+        'kind'    => 'Cartes',
+        'theme'   => ['#3d3488', '#120d31'],
+        'cover'   => '<span class="p10" style="--cc:#d8343f">7</span><span class="p10" style="--cc:#2e5cc7">8</span><span class="p10" style="--cc:#23965a">9</span><span class="p10" style="--cc:#eaa912">10</span>',
+    ],
 ];
 
 // Le jeu n'apparaît que si son dossier existe.
