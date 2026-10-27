@@ -21,7 +21,7 @@ $games = [
         'time'    => '20–40 min',
         'kind'    => 'Cartes',
         'theme'   => ['#1f7d4e', '#072a1b'],
-        'cover'   => '<span class="pc red">A<i>♥</i></span><span class="pc">R<i>♠</i></span><span class="pc red">D<i>♦</i></span>',
+        'cover'   => '<span class="pc red">A<i>♥</i></span><span class="pc">R<i>♠</i></span><span class="pc red">D<i>♦</i></span><span class="pc">V<i>♣</i></span>',
     ],
     [
         'dir'     => 'Phase10',
@@ -42,6 +42,16 @@ $games = [
         'kind'    => 'Cartes',
         'theme'   => ['#a3304a', '#2a0910'],
         'cover'   => '<span class="sb" style="--cc:#2a5bc4">1</span><span class="sb" style="--cc:#1f8f50">5</span><span class="sb" style="--cc:#d23440">9</span><span class="sb wild">SB</span>',
+    ],
+    [
+        'dir'     => 'Uno',
+        'name'    => 'Uno',
+        'pitch'   => 'Même couleur ou même nombre : videz votre main avant les autres, à coups de Passe, d\'Inversions, de +2 et de Jokers. Et n\'oubliez pas de crier « Uno ! »',
+        'players' => '2 à 6 joueurs',
+        'time'    => '10–30 min',
+        'kind'    => 'Cartes',
+        'theme'   => ['#b3202a', '#2a0407'],
+        'cover'   => '<span class="ch" style="--cc:#d9353c">3<i>●</i></span><span class="ch" style="--cc:#2f6fd6">3<i>■</i></span><span class="ch" style="--cc:#23955a">8<i>▲</i></span><span class="ch wild">+4<b><em>+4</em></b></span>',
     ],
 ];
 

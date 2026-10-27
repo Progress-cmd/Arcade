@@ -117,19 +117,20 @@ button { cursor: pointer; }
   box-shadow: 0 30px 80px rgba(0, 0, 0, .45), 0 0 0 1px rgba(255, 255, 255, .4) inset;
   margin-top: 40px;
 }
-.lobby-deco { position: absolute; top: -52px; left: 50%; transform: translateX(-50%); height: 100px; width: 200px; }
+.lobby-deco { position: absolute; top: -52px; left: 50%; transform: translateX(-50%); height: 100px; width: 240px; }
 .mini-card {
   position: absolute; left: 50%; top: 0; width: 64px; height: 90px; margin-left: -32px;
   border-radius: 8px; background: linear-gradient(#fff, var(--paper-2));
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35); color: var(--ink);
   font: 700 22px/1 var(--font-title); padding: 8px; text-align: left;
-  transform-origin: 50% 120%;
+  transform-origin: 50% 130%;
 }
 .mini-card i { display: block; font-style: normal; font-size: 18px; }
 .mini-card.red { color: var(--red); }
-.mini-card:nth-child(1) { transform: rotate(-16deg) translateX(-14px); }
-.mini-card:nth-child(2) { transform: rotate(0deg) translateY(-6px); z-index: 1; }
-.mini-card:nth-child(3) { transform: rotate(16deg) translateX(14px); z-index: 2; }
+.mini-card:nth-child(1) { transform: rotate(-24deg); }
+.mini-card:nth-child(2) { transform: rotate(-8deg); }
+.mini-card:nth-child(3) { transform: rotate(8deg); }
+.mini-card:nth-child(4) { transform: rotate(24deg); }
 
 .logo {
   margin: 0; font: 800 clamp(2.6rem, 9vw, 3.4rem)/1 var(--font-title);

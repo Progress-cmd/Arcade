@@ -126,12 +126,14 @@ body {
 }
 .pc i { display: block; font-style: normal; font-size: 18px; }
 .pc.red { color: var(--red); }
-.pc:nth-child(1) { transform: rotate(-16deg) translateX(-14px); }
-.pc:nth-child(2) { transform: translateY(-6px); z-index: 1; }
-.pc:nth-child(3) { transform: rotate(16deg) translateX(14px); z-index: 2; }
-.game:hover .pc:nth-child(1) { transform: rotate(-26deg) translateX(-22px); }
-.game:hover .pc:nth-child(2) { transform: translateY(-12px); }
-.game:hover .pc:nth-child(3) { transform: rotate(26deg) translateX(22px); }
+.pc:nth-child(1) { transform: rotate(-24deg); }
+.pc:nth-child(2) { transform: rotate(-8deg); }
+.pc:nth-child(3) { transform: rotate(8deg); }
+.pc:nth-child(4) { transform: rotate(24deg); }
+.game:hover .pc:nth-child(1) { transform: rotate(-32deg); }
+.game:hover .pc:nth-child(2) { transform: rotate(-11deg); }
+.game:hover .pc:nth-child(3) { transform: rotate(11deg); }
+.game:hover .pc:nth-child(4) { transform: rotate(32deg); }
 
 /* Éventail de cartes de couleur (vignette de Phase 10) */
 .p10 {
@@ -172,6 +174,37 @@ body {
 .game:hover .sb:nth-child(2) { transform: rotate(-11deg); }
 .game:hover .sb:nth-child(3) { transform: rotate(11deg); }
 .game:hover .sb:nth-child(4) { transform: rotate(32deg); }
+
+/* Éventail de cartes de couleur à chiffre blanc (vignette de Uno) */
+.ch {
+  position: absolute; left: 50%; top: 40px; width: 64px; height: 92px; margin-left: -32px;
+  border-radius: 9px; border: 3px solid #fff; background: var(--cc); color: #fff;
+  display: flex; flex-direction: column; align-items: flex-start; padding: 5px 7px;
+  font: 900 26px/1 var(--font-ui); text-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+  transform-origin: 50% 130%; transition: transform .3s;
+}
+.ch i { font-style: normal; font-size: 14px; margin-top: 2px; }
+/* Joker +4 noir avec sa roue aux quatre couleurs */
+.ch.wild { background: radial-gradient(circle at 50% 40%, #34323f, #121118); font-size: 16px; }
+.ch.wild b {
+  position: absolute; left: 50%; top: 52%; width: 42px; height: 42px; margin: -21px 0 0 -21px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: conic-gradient(from 45deg, #d9353c 0 25%, #2f6fd6 0 50%, #23955a 0 75%, #eeac12 0);
+  box-shadow: 0 0 0 2px #fff, 0 2px 6px rgba(0, 0, 0, .5);
+}
+.ch.wild em {
+  font: 900 14px/1 var(--font-ui); font-style: normal; color: #fff; text-shadow: none;
+  padding: 2px 4px; border-radius: 5px; background: rgba(18, 17, 24, .85); box-shadow: 0 0 0 1px #fff;
+}
+.ch:nth-child(1) { transform: rotate(-24deg); }
+.ch:nth-child(2) { transform: rotate(-8deg); }
+.ch:nth-child(3) { transform: rotate(8deg); }
+.ch:nth-child(4) { transform: rotate(24deg); }
+.game:hover .ch:nth-child(1) { transform: rotate(-32deg); }
+.game:hover .ch:nth-child(2) { transform: rotate(-11deg); }
+.game:hover .ch:nth-child(3) { transform: rotate(11deg); }
+.game:hover .ch:nth-child(4) { transform: rotate(32deg); }
 
 .body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
 .kind {

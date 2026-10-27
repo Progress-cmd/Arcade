@@ -35,6 +35,7 @@ $asset = fn(string $f) => "assets/$f?v=" . filemtime(__DIR__ . "/assets/$f");
       <span class="mini-card red">A<i>♥</i></span>
       <span class="mini-card">R<i>♠</i></span>
       <span class="mini-card red">D<i>♦</i></span>
+      <span class="mini-card">V<i>♣</i></span>
     </div>
     <h1 class="logo">Crapette</h1>
     <p class="tagline">Le grand classique des jeux de patience… à deux, et en ligne.</p>
