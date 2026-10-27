@@ -27,6 +27,9 @@ $asset = fn(string $f) => "assets/$f?v=" . filemtime(__DIR__ . "/assets/$f");
 
 <!-- ============ ACCUEIL ============ -->
 <div id="lobby" class="lobby" hidden>
+  <a class="site-link" href="../">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Tous les jeux
+  </a>
   <div class="lobby-card">
     <div class="lobby-deco" aria-hidden="true">
       <span class="mini-card red">A<i>♥</i></span>
@@ -78,7 +81,8 @@ $asset = fn(string $f) => "assets/$f?v=" . filemtime(__DIR__ . "/assets/$f");
       </button>
       <div class="menu" id="menu" hidden>
         <button id="resignBtn">Abandonner la partie</button>
-        <a href="./">Retour à l'accueil</a>
+        <a href="./">Accueil de la Crapette</a>
+        <a href="../">Tous les jeux</a>
       </div>
     </div>
   </header>
